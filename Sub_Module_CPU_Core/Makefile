@@ -122,11 +122,11 @@ yosys-flist: Bender.lock Bender.yml rtl/*/Bender.yml
 include yosys/yosys.mk
 include openroad/openroad.mk
 
-klayout/croc_chip.gds: $(OR_OUT)/croc.def klayout/*.sh klayout/*.py
+klayout/cve2_core.gds: $(OR_OUT)/cve2_core.def klayout/*.sh klayout/*.py
 	./klayout/def2gds.sh
 
 ## Generate merged .gds from openroads .def output
-klayout: klayout/croc_chip.gds
+klayout: klayout/cve2_core.gds
 
 .PHONY: klayout yosys-flist
 
